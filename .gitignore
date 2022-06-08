@@ -1,6 +1,9 @@
 # Folders
 dataset
 
+#Keys
+dlops-c5a94-firebase-adminsdk-n3pen-8bd258bc68.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
