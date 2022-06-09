@@ -1,0 +1,6 @@
+datamodule:
+  batch_size: 32
+
+trainer:
+  max_epochs: 10
+  logger: True

@@ -1,0 +1,11 @@
+logger: WandbLogger
+logger_params:
+  project: dlops_portfolio_mnist
+  name: "101"
+
+datamodule:
+  batch_size: 32
+
+trainer:
+  max_epochs: 10
+  logger: True

@@ -1,0 +1,11 @@
+callbacks: null
+datamodule:
+  batch_size: 32
+  path: !!python/object/apply:pathlib.PosixPath
+  - dataset
+logger: null
+trainer:
+  enable_checkpointing: false
+  logger: true
+  max_epochs: 10
+  overfit_batches: 0

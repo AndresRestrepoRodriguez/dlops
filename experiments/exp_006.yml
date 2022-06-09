@@ -1,0 +1,18 @@
+datamodule:
+  batch_size: 32
+
+logger: WandbLogger
+logger_params:
+  project: dlops_portfolio_mnist
+  name: "006"
+callbacks:
+  - name: WandBCallback
+    lib: src.utils
+    params:
+      labels:
+        - "no 3"
+        - "3"
+
+trainer:
+  max_epochs: 10
+  logger: True

@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.4.188+-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-06-09T00:21:29.510504",
+    "startedAt": "2022-06-09T00:21:26.315567",
+    "docker": null,
+    "cpu_count": 2,
+    "cuda": null,
+    "args": [
+        "experiments/exp_006.yml"
+    ],
+    "state": "running",
+    "program": "trainer.py",
+    "codePath": "trainer.py",
+    "git": {
+        "remote": "https://github.com/AndresRestrepoRodriguez/dlops.git",
+        "commit": "0d92362c31e94f822d7cffe11e0e51376f0bab8b"
+    },
+    "email": "aorestrepor@correo.udisstrital.edu.co",
+    "root": "/content/drive/MyDrive/portafolio/dlops",
+    "host": "33533bcf8cea",
+    "username": "root",
+    "executable": "/usr/bin/python3"
+}

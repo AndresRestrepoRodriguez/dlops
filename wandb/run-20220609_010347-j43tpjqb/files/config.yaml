@@ -1,0 +1,239 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.17
+    framework: lightning
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: roc_curve_table._type
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.sha256
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.size
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.artifact_path
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table._latest_artifact_path
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.path
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.ncols
+      5: 1
+      6:
+      - 1
+    - 1: roc_curve_table.nrows
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table._type
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.sha256
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.size
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.artifact_path
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table._latest_artifact_path
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.path
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.ncols
+      5: 1
+      6:
+      - 1
+    - 1: conf_mat_table.nrows
+      5: 1
+      6:
+      - 1
+    - 1: loss
+      5: 1
+      6:
+      - 1
+    - 1: acc
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    - 1: val_loss
+      5: 1
+      6:
+      - 1
+    - 1: val_acc
+      5: 1
+      6:
+      - 1
+    python_version: 3.7.13
+    start_time: 1654736627
+    t:
+      1:
+      - 1
+      - 9
+      - 40
+      - 41
+      - 55
+      3:
+      - 7
+      - 13
+      - 16
+      - 23
+      4: 3.7.13
+      5: 0.12.17
+      8:
+      - 5
+    visualize:
+      conf_mat:
+        panel_config:
+          fieldSettings:
+            Actual: Actual
+            Predicted: Predicted
+            nPredictions: nPredictions
+          panelDefId: wandb/confusion_matrix/v1
+          stringSettings:
+            title: ''
+          transform:
+            name: tableWithLeafColNames
+          userQuery:
+            queryFields:
+            - args:
+              - name: runSets
+                value: ${runSets}
+              fields:
+              - fields: []
+                name: id
+              - fields: []
+                name: name
+              - fields: []
+                name: _defaultColorIndex
+              - args:
+                - name: tableKey
+                  value: conf_mat_table
+                fields: []
+                name: summaryTable
+              name: runSets
+        panel_type: Vega2
+      roc_curve:
+        panel_config:
+          fieldSettings:
+            class: class
+            x: fpr
+            y: tpr
+          panelDefId: wandb/area-under-curve/v0
+          stringSettings:
+            title: ROC
+            x-axis-title: False positive rate
+            y-axis-title: True positive rate
+          transform:
+            name: tableWithLeafColNames
+          userQuery:
+            queryFields:
+            - args:
+              - name: runSets
+                value: ${runSets}
+              fields:
+              - fields: []
+                name: id
+              - fields: []
+                name: name
+              - fields: []
+                name: _defaultColorIndex
+              - args:
+                - name: tableKey
+                  value: roc_curve_table
+                fields: []
+                name: summaryTable
+              name: runSets
+        panel_type: Vega2
+callbacks:
+  desc: null
+  value:
+  - lib: src.utils
+    name: WandBCallback
+    params:
+      labels:
+      - no 3
+      - '3'
+  - lib: pytorch_lightning.callbacks
+    name: ModelCheckpoint
+    params:
+      dirpath: checkpoints
+      filename: '006'
+      mode: min
+      monitor: val_loss
+      save_top_k: 1
+datamodule:
+  desc: null
+  value:
+    batch_size: 32
+    path: dataset
+datamodule/batch_size:
+  desc: null
+  value: 32
+datamodule/path:
+  desc: null
+  value: dataset
+logger:
+  desc: null
+  value: WandbLogger
+logger_params:
+  desc: null
+  value:
+    name: '103'
+    project: dlops_portfolio_mnist
+logger_params/name:
+  desc: null
+  value: '103'
+logger_params/project:
+  desc: null
+  value: dlops_portfolio_mnist
+trainer:
+  desc: null
+  value:
+    enable_checkpointing: true
+    logger: true
+    max_epochs: 10
+    overfit_batches: 0
+trainer/enable_checkpointing:
+  desc: null
+  value: true
+trainer/logger:
+  desc: null
+  value: true
+trainer/max_epochs:
+  desc: null
+  value: 10
+trainer/overfit_batches:
+  desc: null
+  value: 0
