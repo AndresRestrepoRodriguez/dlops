@@ -1,5 +1,6 @@
 # Folders
 dataset
+models
 
 #Keys
 dlops-c5a94-firebase-adminsdk-n3pen-8bd258bc68.json
@@ -133,3 +134,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/models
