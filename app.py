@@ -24,8 +24,8 @@ async def root():
 async def predict(file: UploadFile = File(...)):
     request_object_content = await file.read()
     img = Image.open(io.BytesIO(request_object_content))
-    input = np.expand_dims(np.array(img, dtype=np.unit8), axis=0)
-    input = np.expand_dims(np.array(input, dtype=np.unit8), axis=0)
+    input = np.expand_dims(np.array(img, dtype=np.uint8), axis=0)
+    input = np.expand_dims(np.array(input, dtype=np.uint8), axis=0)
     ort_inputs = {
         "input": input
     }
