@@ -1,7 +1,9 @@
 import collections
-import wandb
-from pytorch_lightning.callbacks import Callback
+
 import torch
+from pytorch_lightning.callbacks import Callback
+
+import wandb
 
 
 def deep_update(source, overrides):
@@ -44,12 +46,13 @@ class WandBCallback(Callback):
         preds = torch.nn.functional.one_hot(
             preds, num_classes=len(self.labels))
         trainer.logger.experiment.log({
-            "roc_curve": wandb.plot.roc_curve(y.numpy(), preds.cpu().numpy(), labels=self.labels)})
+            "roc_curve": wandb.plot.roc_curve(
+                y.numpy(),
+                preds.cpu().numpy(),
+                labels=self.labels)}
+        )
         trainer.logger.experiment.log({"conf_mat": wandb.plot.confusion_matrix(
             probs=preds.cpu().numpy(),
             y_true=y.numpy(),
-            class_names=self.labels
-        )
-        }
-        )
+            class_names=self.labels)})
         pl_module.train()
